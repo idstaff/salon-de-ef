@@ -1,9 +1,0 @@
-diff a/README.md b/README.md	(rejected hunks)
-@@ -15,3 +15,7 @@
- 
- WEBサイトのソースコードを格納するディレクトリ
- 
-+## ファイルの共有ルール
-+
-+ソースコード及び.txt .xlsx .docx .pdfのドキュメントはGitにて共有します。
-+デザインカンプおよび.txt .xlsx .docx .pdf以外のファイルはDropboxにて共有します。
