@@ -34,6 +34,8 @@ global > color
   :root {
     --font-family-base: 'Noto Sans JP', sans-serif;
     --font-family-title: "Noto Serif JP", serif;
+    /* お試し */
+    --font-family-deco:'Dancing Script';
     /* --font-family-english:  */
   }
   
@@ -2264,33 +2266,41 @@ opacity: 1;
     width: 49%;
   }
 }
-/* まつげエクステ施術の流れセクション */
+/*5/17追記： まつげエクステ施術の流れセクション(さかまつげの方を下に移動) */
 .under-eyelash-extensions-point{
-  margin-bottom: 40px;
-  
+  margin-top: 60px;
+  position: relative;
+  background: var(--color-bg-primary);
 }
+
 /* position */
 .under-eyelash-extensions-point-2col-title{
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   position: absolute;
+  font-family: var(--font-family-title);
     top: -15px;
     left: 50%;
     transform: translateX(-50%);
     white-space: nowrap
 }
 .under-eyelash-extensions-point-2col{
-  background: var(--color-bg-primary);
+ 
   padding-top: 40px;
   padding-bottom: 40px;
-  position: relative;
+  /* position: relative; */
 }
-.under-eyelash-extensions-point-left,.under-eyelash-extensions-point-right{
+/* .under-eyelash-extensions-point-left,.under-eyelash-extensions-point-right{
   padding: 24px;
   background-color: #fff;
   position: relative;
+} */
+.under-eyelash-extensions-point-2col-inner{
+  padding: 24px;
+  background-color: #fff;
+  /* position: relative; */
 }
-.under-eyelash-extensions-point-left::before,.under-eyelash-extensions-point-right::before{
+/* .under-eyelash-extensions-point-left::before,.under-eyelash-extensions-point-right::before{
   content: '';
   display: block;
   width: 100%;
@@ -2299,7 +2309,7 @@ opacity: 1;
   position: absolute;
   top: 0;
   left: 0;
-}
+} */
 .under-eyelash-extensions-point-left{
   margin-bottom: 24px;
 }
@@ -2313,13 +2323,15 @@ opacity: 1;
   .under-eyelash-extensions-point-2col-inner{
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
   .under-eyelash-extensions-point-left{
     margin-bottom: 0px;
-    width: 48%;
+    width: 30%;
+    margin-right: 48px;
   }
   .under-eyelash-extensions-point-right{
-    width: 48%;
+    width: 70%;
   }
 }
 /* 5段階のボリューム感セクション */
@@ -2734,7 +2746,8 @@ opacity: 1;
   }
   .school-course-option-supplement{
     margin-top: 16px;
-    font-size: 12px;
+   
+    color: #999;
   }
   @media screen and (min-width:768px) {
     .school-course-option-list{
@@ -2876,6 +2889,867 @@ transform: rotate(-45deg);
   }
 }
    /*!
+  page > ブログトップ(blog-top)
+  ----------------------------------------------------------------------------------------------
+  */
+
+  .blog-article-item-right-sub{
+    color: #999;
+    display: flex;
+    margin-bottom: 12px;
+  }
+  .blog-article-item-right-sub p{
+    margin-right: 12px;
+  }
+  .blogarticle-item-right-sub i{
+    display: inline-block;
+    margin-right: 8px;
+  }
+  .blog-top-article-item-right-title{
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 12px;
+    margin-top: 24px;
+  }
+  .blog-top-article-item{
+    padding-top : 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #ccc;
+  }
+  .blog-top-article-item:first-child{
+    border-top: 1px solid #ccc;
+  }
+  .blog-top-article-item:last-child{
+    border-bottom: none;
+  }
+  @media screen and (min-width:500px) {
+    .blog-top-article-item-right-title{
+      margin-top: 0px;
+    }
+   .blog-top-article-item-2col{
+     display: flex;
+     justify-content: space-between;
+   }
+   .blog-top-article-item-img{
+     width: 45%;
+   }
+   .blog-top-article-item-right{
+     margin-left: 40px;
+     width: 55%;
+   }
+ }
+/* 最新の投稿、月刊アーカイブ、カテゴリー */
+  .blog-side-post-title,.blog-side-archive-title,.blog-side-category-title{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+  .blog-side-post-title i,.blog-side-archive-title i,.blog-side-category-title i{
+    color: var(--color-font-primary);
+    margin-right: 8px;
+  }
+  .blog-side-post-list,.blog-side-archive-list{
+    margin-bottom: 40px;
+  }
+  .blog-side-post-item,.blog-side-archive-item,.blog-side-category-item{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #ccc;
+  }
+  .blog-side-post-item i, .blog-side-archive-item i, .blog-side-category-item i{
+    color: var(--color-font-primary);
+    margin-right: 8px;
+  }
+  .blog-2col{
+    margin-top: 48px;
+    margin-bottom: 64px;
+  }
+  .blog-top-article{
+    margin-bottom: 64px;
+  }
+  @media screen and (min-width:768px) {
+    
+  /* PC時はサイドと記事リスト２カラムに */
+  .blog-2col{
+    margin-top: 48px;
+    display: flex;
+    margin-bottom: 72px;
+  }
+  .blog-top-article{
+    width: 70%;
+    margin-right: 30px;
+    margin-bottom: 0;
+  }
+  .blog-side{
+    width: 30%;
+  }
+    }
+  /* ページネーション */
+  .previous a,.numbers a,.next a{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #999;
+    border: 1px solid #999;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  .blog-top-article-pagenation-wrapper{
+    display: flex;
+    justify-content: center;
+  }
+  .current a{
+    background:#999;
+    color: #fff;
+  }
+   /*!
+  page > ブログ詳細(eylash-explanation)
+  ----------------------------------------------------------------------------------------------
+  */
+  .blog-article{
+    margin-bottom: 64px;
+  }
+  .blog-article-item-right-title{
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 24px;
+    margin-bottom: 12px;
+  }
+  @media screen and (min-width:768px) {
+    .blog-article{
+      width: 70%;
+      margin-right: 30px;
+      margin-bottom: 0;
+    }
+  }
+/* ページャー */
+.blog-artivle-nav{
+  margin-top: 32px;
+}
+.blog-artivle-nav-wrapper{
+  display: flex;
+  justify-content: space-between;
+}
+.nav-previous i{
+  margin-right: 8px;
+}
+.nav-next i{
+  margin-left: 8px;
+}
+
+
+    /*!
+  page > 求人(recruit)
+  ----------------------------------------------------------------------------------------------
+  */
+  /* SP時のMV */
+  .recruit-mv-sp-catch{
+    background: #f8f8f8;
+    font-family: var(--font-family-title);
+    font-weight: bold;
+    font-size: 6vw;
+    position: relative;
+    z-index: 1;
+    padding: 20px 0 28px 0;
+  }
+  .catch-color-change{
+    color: var(--color-font-primary);
+  }
+  .recruit-mv-sp-catch .catch-up{
+    margin-bottom: 20px;
+  }
+  .recruit-mv-sp-catch .catch-up,.recruit-mv-sp-catch .catch-down{
+    display: inline-block;
+    padding: 10px 20px;
+    background: #fff;
+    position: relative;
+  }
+  .recruit-mv-sp-catch .catch-up::after,.recruit-mv-sp-catch .catch-down::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg-primary);
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: -1;
+  }
+  .recruit-mv-sp-img{
+    position: relative;
+  }
+  .recruit-mv-sp-img .recruit-mv-deco{
+    font-family: var(--font-family-deco);
+    color: #999;
+    position: absolute;
+    right: 0;
+    bottom: -7px;
+    font-size: 56px;
+    z-index: 1;
+    line-height: 1;
+  }
+  /* PC時のMV */
+  @media screen and (min-width:768px) {
+  .recruit-mv-pc{
+    position: relative;
+  }
+  .recruit-mv-pc-catch{
+    font-family: var(--font-family-title);
+    font-weight: bold;
+    font-size: 3vw;
+    position: absolute;
+    z-index: 1;
+    padding: 20px 0 28px 0;
+    bottom: 10%;
+    left: 0;
+  }
+  .recruit-mv-pc-catch .catch-up{
+    margin-bottom: 20px;
+  }
+  .recruit-mv-pc-catch .catch-up,.recruit-mv-pc-catch .catch-down{
+    display: inline-block;
+    padding: 10px 20px;
+    background: #fff;
+    position: relative;
+  }
+  .recruit-mv-pc-catch .catch-up::after,.recruit-mv-pc-catch .catch-down::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg-primary);
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: -1;
+  }
+  .recruit-mv-pc-img{
+    position: relative;
+  }
+  .recruit-mv-pc-img .recruit-mv-deco{
+    font-family: var(--font-family-deco);
+    color: #999;
+    position: absolute;
+    right: 0;
+    bottom: -15px;
+    font-size: 120px;
+    z-index: 1;
+    line-height: 1;
+  }
+    }
+
+    /* 導入部分 */
+    .recruit-introduction{
+      padding-top: 64px;
+      padding-bottom: 64px;
+      margin-top: 24px;
+      background: url(../img/recruit/bc-introduction-sp.png);
+      background-size: cover;
+      background-position: center;
+    }
+  
+    .recruit-introduction-title{
+      font-size: 24px;
+      font-family: var(--font-family-title);
+      font-weight: bold;
+      margin-bottom: 24px;
+    }
+    .recruit-introduction p{
+      margin-top: 16px;
+    }
+    .title-color-change{
+      color: var(--color-font-primary);
+    }
+    @media screen and (min-width:768px) {
+      .recruit-introduction{
+        background: url(../img/recruit/bg-introduction-pc.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+      .recruit-introduction-title{
+        font-size: 32px;
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .recruit-introduction p{
+        margin-top: 24px;
+      }
+    }
+    .recruit-merit-title{
+      margin-bottom: 32px;
+    }
+    /* サロンドエフで働くメリット */
+    /* .recruit-merit-title .c-title-under-marker{
+      display: block;
+    } */
+    /* 5/15追記：なぜかタイトルが1行にならない */
+    @media screen and (min-width:463px) {
+      .recruit-merit-title{
+        display: flex;
+        justify-content: center;
+      }
+      .recruit-merit-title .c-title-under-marker{
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+    .merit-deco-script{
+      display: inline-block;
+      font-family:var(--font-family-deco);
+      color: var(--color-font-primary);
+    }
+  /* サロンドエフ3つの教育指針 */
+  .u-395{
+    display: block;
+  }
+  .u-396{
+    display: none;
+  }
+  @media screen and (min-width:396px) {
+    .u-395{
+      display:none;
+    }
+    .u-396{
+      display: block;
+    }
+  }
+  .number-big{
+    font-size: 35px;
+  }
+   .recruit-guidelines-title{
+     margin-bottom: 32px;
+   } 
+ 
+   /* サロンドエフ3つの教育指針 */
+   .recruit-guidlines-list{
+     background: url(../img/recruit/bg-guidline-sp.png);
+     background-position: center;
+     background-size: cover;
+     padding-top: 64px;
+     padding-bottom: 64px;
+   }
+   .recruit-guidlines-item{
+     position: relative;
+     padding: 32px 20px;
+     background-color: #fff;
+   }
+   .recruit-guidlines-item:not(:last-child){
+     margin-bottom: 40px;
+   }
+   .recruit-guidlines-item-title{
+     text-align: center;
+     margin-top: 20px;
+     margin-bottom: 20px;
+   }
+   .recruit-guidlines-item-title-en{
+     display: block;
+     font-size: 34px;
+     color: var(--color-font-primary);
+     font-family: var(--font-family-title);
+     font-weight: bold;
+   }
+   .recruit-guidlines-item-title-ja{
+     font-size: 18px;
+     font-weight: bold;
+     font-family: var(--font-family-title);
+     font-weight: bold;
+   }
+   .recruit-guidlines-item-deco{
+     position: absolute;
+     width: 18vw;
+     top: -20px;
+     left: -10px;
+   }
+   @media screen and (min-width:768px) {
+     .recruit-guidlines-item-2col{
+       display: flex;
+     }
+     .recruit-guidlines-item-img{
+       width: 45%;
+     }
+     .recruit-guidlines-item-right{
+       width: 55%;
+       margin-left: 48px;
+     }
+     .recruit-guidlines-item-title{
+       text-align: left;
+     }
+     .recruit-guidlines-item-deco{
+       width: 10vw;
+       max-width: 120px;
+     }
+   }
+
+   /* 募集要項 */
+   .recruit-description{
+     margin-bottom: 40px;
+   }
+   .recruit-description-title{
+     margin-bottom: 32px;
+   }
+   .recruit-description-table{
+     border: 1px solid #ccc;
+   }
+   .recruit-description-table-2col{
+     border-bottom: 1px solid #ccc;
+   }
+   .recruit-description-table-heading{
+     font-size: 18px;
+     font-weight: bold;
+     text-align: center;
+     padding: 20px 20px;
+     background-color: var(--color-bg-primary);
+     border-bottom: 1px solid #ccc;
+   }
+   .recruit-description-table-text{
+     padding: 20px 20px;
+   }
+   .recruit-description-table-text span{
+     font-size: 12px;
+   }
+   .recruit-description-table-2col:last-child{
+     border-bottom: none;
+   }
+   @media screen and (min-width:768px) {
+    .recruit-description-table-2col{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .recruit-description-table-heading{
+      width: 30%;
+      border-right: 1px solid #ccc;
+      border-bottom: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .recruit-description-table-text{
+      width: 70%;
+    }
+   }
+
+   /* 店長からのメッセージ */
+   .c-message-left{
+     background-color: #f8f8f8;
+     padding: 20px;
+   }
+   .c-message-left-title{
+     font-size: 18px;
+     font-weight: bold;
+     margin-bottom: 16px;
+   }
+   .c-message-left{
+     position: relative;
+   }
+   .c-message-left::after{
+     content: '';
+     width:0;
+     height:0;
+     border-style:solid;
+     border-width: 25px 25px 0 25px;
+     border-color: #F8F8F8 transparent transparent transparent;
+     position: absolute;
+     left: 50%;
+     transform: translateX(-50%);
+     bottom: -25px;
+   }
+   .c-message-right{
+     margin-top: 40px;
+   }
+   .c-message-right img{
+       display: block;
+      width: 120px;
+      margin: 0 auto;
+   }
+   @media screen and (min-width:768px) {
+     .c-message-2col{
+       display: flex;
+       align-items: center;
+     }
+     .c-message-right{
+       margin-top: 0;
+       width: 160px;
+       margin-left: 40px;
+     }
+     .c-message-right img{
+       width: 160px;
+     }
+     .c-message-left::after{
+      width:0;
+      height:0;
+      border-style:solid;
+      border-width: 25px 0 25px 25px;
+      border-color: transparent transparent transparent #F8F8F8;
+      top: 50%;
+      left: 100%;
+      transform: translateY(-50%);
+     }
+   }
+
+   /* 応募方法 */
+   .recruit-application-title{
+     font-size: 20px;
+     padding: 20px;
+     background-color: var(--color-bg-primary);
+     font-weight: bold;
+     margin-bottom: 24px;
+   }
+   /* 電話 */
+   .recruit-application-method-phone,.recruit-application-method-line{
+     padding: 20px;
+     box-shadow: 2px 2px 8px rgb(0 0 0 / 10%);
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     position: relative;
+   }
+   .recruit-application-method-phone{
+     margin-bottom: 24px;
+     margin-top: 24px;
+   }
+   .recruit-application-method-phone::after{
+    position: absolute;
+    display: inline-block;
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 20px 20px;
+    border-color: transparent transparent var(--color-font-primary) transparent;
+    bottom: 0;
+    right: 0;
+   }
+   .recruit-application-method-line::after{
+    position: absolute;
+    display: inline-block;
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 20px 20px;
+    border-color: transparent transparent #00c300 transparent;
+    bottom: 0;
+    right: 0;
+   }
+  
+   .recruit-application-method-phone>p,.recruit-application-method-line>p{
+    font-weight: bold;
+     font-size: 26px;
+     margin-bottom: 12px;
+     line-height: 1;
+   }
+   .recruit-application-method-line>p{
+      margin-top: 12px;
+   }
+   .recruit-application-method-color-change.red{
+    color: var(--color-font-primary);
+   }
+   .recruit-application-method-color-change.green{
+     color: #00c300;
+   }
+   .recruit-application-method-small{
+     font-size: 20px;
+   }
+   .recruit-application-method-phone-2col{
+     display: flex;
+   }
+   .recruit-application-method-phone-right p{
+     font-size: 24px;
+     font-weight: bold;
+     line-height: 1;
+   }
+   .recruit-application-method-phone-right small{
+     font-size: 14px;
+   }
+   @media screen and (min-width:640px) {
+     .recruit-application-method{
+       margin-top: 48px;
+     }
+     .recruit-application-method-inner{
+       display: flex;
+     }
+     .recruit-application-method-phone,.recruit-application-method-line{
+       width: 50%;
+     }
+     .recruit-application-method-phone{
+      margin: 0 48px 0 0;
+      justify-content: center;
+    }
+   }
+  /*!
+  page > エステティック(eylash-explanation):5/17:あくまでお試し
+  ----------------------------------------------------------------------------------------------
+  */
+   .esthetic-top-title{
+     margin-bottom: 16px;
+   }
+   .c-category-top-menu-introduction{
+     margin-bottom: 84px;
+   }
+
+   /* 5/17追記:お試し：カテゴリートップメニュー共通 */
+   .c-category-top-menu{
+     background-color: #f8f8f8;
+     position: relative;
+   }
+   .c-category-top-menu-inner{
+     padding-top: 67px;
+     padding-bottom: 32px;
+   }
+   /* タイトル周り */
+   .c-category-top-menu-title-inner{
+    text-align: center; 
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+   .c-category-top-menu-title{
+     text-align: center;
+     display: flex;
+     display: inline-block;
+     position: relative;
+     z-index: 1;
+   }
+   
+   .c-category-top-menu-title-en{
+     font-size: 16px;
+     color: var(--color-font-primary);
+     display: block;
+     line-height: 1;
+     margin-bottom: 10px;
+   }
+   .c-category-top-menu-title-ja{
+     display: block;
+     font-size: 22px;
+     font-family: var(--font-family-title);
+     font-weight: bold;
+     line-height: 1;
+     white-space: nowrap;
+     
+   }
+   .c-category-top-menu-title::after{
+     content: '';
+     width: 40px;
+     height: 40px;
+     border: 5px solid var(--color-bg-primary);
+     display: inline-block;
+     position: absolute;
+     top: 0;
+     left: -10px;
+     z-index: -1;
+   }
+   /* カード周りタイトル */
+   .c-category-menu-list-item-right-title{
+     font-size: 20px;
+     font-family: var(--font-family-title);
+     font-weight: bold;
+     margin-bottom: 12px;
+   }
+   .c-category-menu-list-item-right-tag{
+     display: flex;
+     margin-bottom: 16px;
+   }
+   .c-category-menu-list-item-right-tag span{
+    display: inline-block;
+    padding: 3px 12px;
+    background-color: #dcdcdc;
+    line-height: 1;
+    border-radius: 32px;
+    margin-right: 8px;
+   }
+   .c-category-menu-list-item-rigit-text{
+     margin-bottom: 18px;
+   }
+   .c-category-menu-list-item-rigit-text-caution{
+    color: var(--color-font-primary);
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+   @media screen and (min-width:768px) {
+     .esthetic-top-title{
+      margin-bottom: 32px;
+     }
+     /* カテゴリータイトル */
+     .c-category-top-menu-title-ja{
+      font-size: 32px;
+     }
+     .c-category-top-menu-title::after{
+       width: 50px;
+       height: 50px;
+       left: -25px;
+     }
+     /* カードのタイトル */
+     .c-category-menu-list-item-right-title{
+       font-size: 24px;
+     }
+     .c-category-menu-list-item-rigit-text-caution{
+       color: var(--color-font-primary);
+       font-size: 14px;
+       margin-bottom: 16px;
+     }
+   }
+   /* レイアウト */
+   .c-category-menu-list-item-right{
+     padding: 32px 20px;
+     background-color: #fff;
+     margin: 0px 20px;
+     box-shadow: 2px 2px 8px rgb(0 0 0 / 10%);
+     position: relative;
+     top: -40px;
+     margin-bottom: -40px;
+   }
+   .c-category-menu-list-item:not(:last-child){
+    margin-bottom: 40px;
+  }
+  .c-category-top-menu:not(:last-of-type){
+    margin-bottom: 64px;
+  }
+   @media screen and (min-width:768px) {
+     .c-category-menu-list-item-2col{
+       display: flex;
+       position: relative;
+       flex-direction: row-reverse;
+     }
+     .c-category-menu-list-item:not(:last-child){
+       margin-bottom: 56px;
+     }
+    .c-category-menu-list-item-right{
+      position: absolute;
+      margin: 0;
+      padding: 32px;
+      width: 35rem;
+      top: 50%;
+      left:  0%;
+      transform: translateY(-50%);
+    }
+    .c-category-menu-list-item-left{
+      width: 70%;
+    }
+    /* ボタン位置 */
+    .c-category-menu-list-item-right .c-button--center{
+      margin: 24px auto 0 0;
+    }
+    /* 偶数は写真とテキスト入れ替え */
+    .c-category-menu-list-item:nth-child(2n) .c-category-menu-list-item-2col{
+      flex-direction: row;
+    }
+    .c-category-menu-list-item:nth-child(2n) .c-category-menu-list-item-right{
+      right: 0%;
+      left: auto;
+    }
+    .c-category-top-menu{
+      background-color:transparent;
+      position: relative;
+      z-index: 1;
+    }
+    .c-category-top-menu::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 70%;
+    left: 0;
+    /* background: var(--color-bg-gradeient); */
+    background: #f8f8f8;
+    z-index: -1;
+    }
+    .c-category-top-menu-inner{
+      padding-top: 64px;
+      padding-bottom: 64px;
+    }
+    /* メニューの大枠自体も背景を左右に入れ替えて繰り返す */
+    .c-category-top-menu.right::after{
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 70%;
+      right: 0;
+      left: auto;
+      /* background: var(--color-bg-gradeient); */
+      background: #f8f8f8;
+      z-index: -1;
+      }
+      .c-category-top-menu:not(:last-of-type){
+        margin-bottom: 83px;
+      }
+    }
+
+  /*!
+  page > 更にお試し(バナーテキスト化)
+  ----------------------------------------------------------------------------------------------
+  */
+  
+  .c-bannar-recommendation-inner{
+    padding: 20px 20px 0 20px;
+    border: 5px solid #a39071;
+    background-color: #FAF7F2;
+  }
+  .c-bannar-recommendation-inner{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  
+  }
+  .c-bannar-recommendation-left{  
+    width: 35%;
+    position: relative;
+  }
+  .c-bannar-recommendation-right-text{
+    font-size: 3.7vw;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 24px;
+  }
+  .c-bannar-recommendation-right-text:not(:last-child){
+    margin-bottom: 16px;
+  }
+  @media screen and (min-width:480px) {
+    .c-bannar-recommendation-right-text{
+      font-size: 17px;
+  }
+}
+  @media screen and (min-width:768px) {
+    .c-bannar-recommendation-inner{
+      flex-direction: row;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .c-bannar-recommendation-left{  
+      width: 21%;
+      position: relative;
+      bottom: -3px;
+    }
+    .c-bannar-recommendation-right{
+      width: 70%;
+      margin-left: auto;
+    }
+    .c-bannar-recommendation-inner{
+      padding: 40px 40px 0 0;
+      border: 5px solid #a39071;
+      background-color: #FAF7F2;
+    }
+    .c-bannar-recommendation-right-text{
+      font-size: 2vw;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #ccc;
+    }
+    .c-bannar-recommendation-right-text:not(:last-child){
+      margin-bottom: 32px;
+    }
+  }
+ 
+  @media screen and (min-width:1200px) {
+    .c-bannar-recommendation-right-text{
+      font-size: 24px;
+  }
+}
+    /*!
   page > まつげエクステ(eylash-explanation)
   ----------------------------------------------------------------------------------------------
   */
