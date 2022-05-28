@@ -6,3 +6,5 @@
 /documents/原稿/backup原稿
 /documents/原稿/backup原稿素材
 *.ai
+._.DS_Store
+.DS_Store
